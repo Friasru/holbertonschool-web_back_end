@@ -2,7 +2,7 @@ import readDatabase from '../utils';
 
 export default class StudentsController {
   static getAllStudents(request, response) {
-    const dbPath = request.app.get('dbPath');
+    const dbPath = process.argv[2];
 
     readDatabase(dbPath)
       .then((students) => {
@@ -31,7 +31,7 @@ export default class StudentsController {
       return;
     }
 
-    const dbPath = request.app.get('dbPath');
+    const dbPath = process.argv[2];
 
     readDatabase(dbPath)
       .then((students) => {
